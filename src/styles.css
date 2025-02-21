@@ -589,7 +589,7 @@ th {
         -webkit-print-color-adjust: exact;
     }
 
-header, .footer {
-    display: none;
-}
+    header, .footer {
+        display: none;
+    }
 }
