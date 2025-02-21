@@ -1,0 +1,590 @@
+h1 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+}
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+
+}
+h3 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+
+p {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300; /* Tunn stil */
+    font-size: 14px;
+}
+
+.logo {
+    width: 200px; /* Ändra storleken vid behov */
+    height: auto;
+    display: block;
+    margin-left: 80px;
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d11111;
+    padding: 5px 10px;
+    height: 50px;
+
+    background-image: url('assets/checker04.png');
+    background-size: contain; /* Täcker hela headern */
+    background-blend-mode: normal;
+
+    background-position: left; /* Centrera beskärningen */
+    background-origin: border-box;
+    background-repeat: no-repeat; /* Ingen upprepning */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    margin-right: 80px;
+    display: inline-flex;
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+}
+
+.profile {
+    width: 30px;
+    border-radius: 50%;
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+}
+/* Hero Video Sektion */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    display: block;
+}
+
+/* Overlay för att göra texten mer synlig */
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+
+}
+.hero-content{
+    transform: translate(15%, 100%);
+    font-style: italic;
+    text-align: left;
+    color: white;
+
+}
+.hero-content h2 {
+    margin-bottom: 0px; /* Mellanrum mellan rubriker */
+    margin-top: 0px;
+}
+
+.hero-content h1 {
+    margin-bottom: 0px; /* Mellanrum mellan rubriker */
+    margin-top: -10px;
+}
+
+.hero-content p {
+    margin-top: 10px; /* Mellanrum ovanför paragrafen */
+    line-height: 1.6; /* Radavstånd för läsbarhet */
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.2); /* Frostad glas-effekt */
+    backdrop-filter: blur(10px); /* Sudda bakgrunden för glas-effekt */
+    border-radius: 50px; /* Rundad form */
+    color: white; /* Textfärg */
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Ljus kant */
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+.hero-button:hover {
+    background: rgba(255, 255, 255, 0.3); /* Lite ljusare vid hover */
+    transform: scale(1.05);
+}
+
+/* Lägg till en pilikon */
+.hero-button::after {
+    content: ' ▶'; /* Pil-symbol */
+    font-size: 18px;
+    margin-left: 10px; /* Avstånd mellan text och pil */
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+.drop-in-header{
+    margin-top: -30px;
+    align-content: center;
+    display: flex;
+    position: relative;
+}
+
+.drop-in-header::before,
+.drop-in-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(0,0,0, 0.5);
+    margin: 60px 15px;
+    z-index: 2;
+}
+.section-header{
+    margin-top: -20px;
+    align-content: center;
+    display: flex;
+    position: relative;
+}
+.section-header::before,
+.section-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(0,0,0, 0.5);
+    margin: 60px 15px;
+    z-index: 2;
+}
+
+.drop-in-box{
+    width: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    margin: 10px;
+    background: #ffffff;
+    border: 1px rgba(0,0,0, 0.2) solid;
+}
+.drop-in-box h2{
+    font-size: 30px;
+    margin-top: -10px;
+}
+.drop-in-box h3{
+    font-family: 'Kanit', sans-serif;
+    font-weight:500;
+    margin-top: -30px;
+    margin-bottom: -10px;
+}
+.drop-in-box li{
+    margin-top: -5px;
+    font-family: 'Kanit', sans-serif;
+}
+.drop-in-box p{
+    margin-bottom: -10px;
+}
+
+.opening-hours{
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    margin: 10px;
+    width: 300px;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.opening-hours h3 {
+    margin-top: -5px;
+    font-family: 'Kanit', sans-serif;
+    font-weight:500;
+}
+
+.opening-hours td {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    padding: 6px;
+    border-top: 1px solid #ddd;
+
+}
+.opening-hours p{
+    font-family: 'Kanit', sans-serif;
+    padding: 6px;
+    background-color: #ececec;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%; /*Ser till att innehållet tar upp hela tabellen*/
+    border-collapse: collapse;
+}
+
+.drop-in-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: -50px;
+}
+
+.om-oss{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.om-oss img{
+    width: 30%;
+    border-radius: 1px;
+}
+.om-oss p{
+    width: 500px;
+    font-size: 17px;
+}
+.om-oss h3{
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+
+}
+
+.tracks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.track {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin-top: -10px;
+}
+
+.track:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+.track h3 {
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.track img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.track hr {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px rgba(0,0,0,0.2) solid;
+}
+
+.track p {
+    margin: 5px 0;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: -5px;
+    color: #4973c8;
+    text-decoration: none;
+    font-weight: 300;
+    font-family: 'Kanit', sans-serif;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+    color: #0033ff;
+    transition: 0.2s ease-in-out;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-pic img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.profile-info {
+    margin-left: 20px;
+}
+
+.edit-icon {
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #ffcc00;
+    background: #d3d3d3;
+    border-radius: 50%;
+    border: 1px rgba(0,0,0,0.2) solid;
+    padding: 3px;
+}
+
+.profile-info p{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+}
+
+
+.title {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.stats {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px rgba(0,0,0,0.2) solid;
+    width: 300px;
+    text-align: center;
+}
+
+.stats img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.your-time {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 0;
+    padding: 5px;
+    background: #e6e6e6;
+    border-radius: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.leaderboard {
+    margin-top: 10px;
+}
+
+.leaderboard h3 {
+    margin-bottom: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.leaderboard ul {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard li {
+    font-family: 'Kanit', sans-serif;
+    background: #f8f8f8;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.booking-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.packages {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.package {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    margin: 15px;
+    border: 1px rgba(0,0,0,0.2) solid;
+
+}
+
+.package h2 {
+    font-family: 'Kanit', sans-serif;
+    margin-bottom: -20px;
+    margin-top: -10px;
+}
+
+.package li {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.package p {
+    margin-bottom: -10px;
+}
+
+.booking-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking-table {
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+    width: 30%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 50px;
+    font-family: Arial, sans-serif;
+}
+.booking-table th,
+.booking-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f4f4f4;
+}
+.ledig {
+    background-color: #b4e1b4;
+    font-weight: bold;
+}
+.bokat {
+    color: grey;
+    font-style: italic;
+}
+
+.footer {
+    margin-top: 50px;
+    background-color: #222;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    font-family: 'Kanit', sans-serif;
+    font-weight: normal;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
