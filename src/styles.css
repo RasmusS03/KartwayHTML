@@ -28,15 +28,14 @@ p {
     display: block;
     margin-left: 80px;
     filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.5));
+    transition: 0.2s ease-in-out;
 }
 
 .logo:hover {
     transform: scale(1.1);
-    transition: 0.2s ease-in-out;
 }
 
 header {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,17 +43,14 @@ header {
     padding: 5px 10px;
     height: 50px;
 
+    /* Checker bilden bakom loggan */
     background-image: url('assets/checker04.png');
-    background-size: contain; /* Täcker hela headern */
+    background-size: contain;
     background-blend-mode: normal;
-
-    background-position: left; /* Centrera beskärningen */
+    background-position: left;
     background-origin: border-box;
-    background-repeat: no-repeat; /* Ingen upprepning */
-
-
+    background-repeat: no-repeat;
 }
-
 
 nav ul {
     list-style: none;
@@ -70,6 +66,7 @@ nav ul li {
 }
 
 nav ul li a {
+    display: flex;
     color: white;
     text-decoration: none;
     font-family: 'Kanit', sans-serif;
@@ -141,7 +138,7 @@ nav ul li a {
     padding: 15px 40px;
     background: rgba(255, 255, 255, 0.2); /* Frostad glas-effekt */
     backdrop-filter: blur(10px); /* Sudda bakgrunden för glas-effekt */
-    border-radius: 50px; /* Rundad form */
+    border-radius: 50px;
     color: white; /* Textfärg */
     font-family: 'Kanit', sans-serif;
     font-size: 20px;
@@ -155,11 +152,11 @@ nav ul li a {
     transform: scale(1.05);
 }
 
-/* Lägg till en pilikon */
+/* Lägg till en pil i knappen */
 .hero-button::after {
     content: ' ▶'; /* Pil-symbol */
     font-size: 18px;
-    margin-left: 10px; /* Avstånd mellan text och pil */
+    margin-left: 10px;
 }
 
 body {
@@ -259,7 +256,7 @@ body {
 }
 
 table {
-    width: 100%; /*Ser till att innehållet tar upp hela tabellen*/
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -315,11 +312,11 @@ table {
     border: 1px solid rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin-top: -10px;
+    transition: 0.2s ease-in-out;
 }
 
 .track:hover {
     transform: scale(1.1);
-    transition: 0.2s ease-in-out;
 }
 
 .track h3 {
@@ -351,12 +348,12 @@ table {
     text-decoration: none;
     font-weight: 300;
     font-family: 'Kanit', sans-serif;
+    transition: 0.2s ease-in-out;
 }
 
 .map-link:hover {
     text-decoration: underline;
     color: #0033ff;
-    transition: 0.2s ease-in-out;
 }
 
 .profile-container {
@@ -472,7 +469,6 @@ table {
     width: 350px;
     margin: 15px;
     border: 1px rgba(0,0,0,0.2) solid;
-
 }
 
 .package h2 {
