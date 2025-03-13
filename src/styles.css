@@ -282,7 +282,6 @@ table {
 }
 
 .active {
-    color: green !important;
     font-weight: bold !important;
 }
 
