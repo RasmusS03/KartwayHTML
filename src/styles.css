@@ -127,8 +127,18 @@ nav ul li a {
 }
 
 .hero-content p {
-    margin-top: 10px; /* Mellanrum ovanför paragrafen */
+    margin-top: 0px;
     line-height: 1.6; /* Radavstånd för läsbarhet */
+}
+
+.hero-content h2,
+.hero-content h1,
+.hero-content p,
+.hero-button {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s ease-out;
+    filter: blur(3px);
 }
 
 .hero-button {
@@ -144,12 +154,12 @@ nav ul li a {
     font-size: 20px;
     font-weight: 700;
     border: 1px solid rgba(255, 255, 255, 0.3); /* Ljus kant */
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
     text-decoration: none;
 }
 .hero-button:hover {
     background: rgba(255, 255, 255, 0.3); /* Lite ljusare vid hover */
-    transform: scale(1.05);
+    transform: scale(1.05%);
 }
 
 /* Lägg till en pil i knappen */
@@ -259,6 +269,24 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+
+
+.open {
+    color: green;
+    font-weight: bold !important;
+}
+
+.closed {
+    color: red;
+    font-weight: normal !important;
+}
+
+.active {
+    color: green !important;
+    font-weight: bold !important;
+}
+
+
 
 .drop-in-content{
     display: flex;
