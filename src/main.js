@@ -68,3 +68,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+function toggleDropdown() {
+    const dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.classList.toggle("show");
+
+    window.addEventListener("click", function(event) {
+        if (!event.target.matches(".dropbtn")) {
+            dropdownContent.classList.remove("show");
+        }
+    }, { once: true });
+}
+
