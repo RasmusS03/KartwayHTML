@@ -68,14 +68,51 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-function toggleDropdown() {
-    const dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.classList.toggle("show");
+const dropdowns = document.querySelectorAll(".dropdown");
 
-    window.addEventListener("click", function(event) {
-        if (!event.target.matches(".dropbtn")) {
-            dropdownContent.classList.remove("show");
+dropdowns.forEach((dropdown) => {
+    const dropbtn = dropdown.querySelector(".dropbtn");
+    const caret = dropdown.querySelector(".caret");
+    const dropdownContent = dropdown.querySelector(".dropdown-content");
+    const options = dropdown.querySelectorAll(".dropdown-content li");
+    const stad = dropdown.querySelector(".stad");
+
+
+    dropbtn.addEventListener("click", () => {
+        dropbtn.classList.toggle("dropbtn-clicked");
+        caret.classList.toggle("caret-rotate");
+        dropdownContent.classList.toggle("dropdown-content-open");
+    });
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            stad.innerText = option.innerText;
+            stad.classList.add("text-fade-in");
+            setTimeout(() => {
+                stad.classList.remove("text-fade-in");
+            }, 300);
+            stad.classList.remove("stad-clicked");
+            caret.classList.remove("caret-rotate");
+            dropdownContent.classList.remove("dropdown-content-open");
+
+            option.forEach(option => {
+                option.classList.remove("aktiv");
+            });
+            option.classList.add("aktiv");
+        });
+    });
+
+    window.addEventListener("click", e =>{
+        const size = dropdown.getBoundingClientRect();
+        if(
+            e.clientX < size.left ||
+            e.clientX > size.right ||
+            e.clientY < size.top ||
+            e.clientY > size.bottom
+        ) {
+            dropbtn.classList.remove("dropbtn-clicked");
+            caret.classList.remove("caret-rotate");
         }
-    }, { once: true });
-}
+    });
+});
 
