@@ -13,13 +13,22 @@
 
 
 <body>
-<script src="main.js"></script>
 <script src="jquery-3.7.1.min.js"></script>
+<script src="main.js"></script>
+
 
 <header>
     <a href="index.html">
         <img src="assets/logo.png" alt="Kartway logga" class="logo">
     </a>
+    <div class="dropdown">
+        <button id="dropdownBtn">Välj stad</button>
+        <div class="dropdown-content" id="dropdownContent">
+            <a href="#" data-city="Piteå">Piteå</a>
+            <a href="#" data-city="Luleå">Luleå</a>
+            <a href="#" data-city="Skellefteå">Skellefteå</a>
+        </div>
+    </div>
     <nav>
         <ul>
             <li><a href="bokning.html">Boka</a></li>

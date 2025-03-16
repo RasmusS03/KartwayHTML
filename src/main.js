@@ -68,51 +68,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-const dropdowns = document.querySelectorAll(".dropdown");
 
-dropdowns.forEach((dropdown) => {
-    const dropbtn = dropdown.querySelector(".dropbtn");
-    const caret = dropdown.querySelector(".caret");
-    const dropdownContent = dropdown.querySelector(".dropdown-content");
-    const options = dropdown.querySelectorAll(".dropdown-content li");
-    const stad = dropdown.querySelector(".stad");
-
-
-    dropbtn.addEventListener("click", () => {
-        dropbtn.classList.toggle("dropbtn-clicked");
-        caret.classList.toggle("caret-rotate");
-        dropdownContent.classList.toggle("dropdown-content-open");
+$(document).ready(function() {
+    $("#dropdownBtn").click(function() {
+        $("#dropdownContent").toggleClass("show");
+        $("#dropdownBtn").toggleClass("rotate");
     });
 
-    options.forEach(option => {
-        option.addEventListener("click", () => {
-            stad.innerText = option.innerText;
-            stad.classList.add("text-fade-in");
-            setTimeout(() => {
-                stad.classList.remove("text-fade-in");
-            }, 300);
-            stad.classList.remove("stad-clicked");
-            caret.classList.remove("caret-rotate");
-            dropdownContent.classList.remove("dropdown-content-open");
-
-            option.forEach(option => {
-                option.classList.remove("aktiv");
-            });
-            option.classList.add("aktiv");
-        });
+    $("#dropdownContent a").click(function() {
+        const city = $(this).data("city");
+        $("#dropdownBtn").text(city);
+        $("#dropdownContent").removeClass("show");
+        $("#dropdownBtn").removeClass("rotate");
     });
 
-    window.addEventListener("click", e =>{
-        const size = dropdown.getBoundingClientRect();
-        if(
-            e.clientX < size.left ||
-            e.clientX > size.right ||
-            e.clientY < size.top ||
-            e.clientY > size.bottom
-        ) {
-            dropbtn.classList.remove("dropbtn-clicked");
-            caret.classList.remove("caret-rotate");
+    // Close the dropdown if clicked outside
+    $(window).click(function(event) {
+        if (!$(event.target).closest(".dropdown").length) {
+            $("#dropdownContent").removeClass("show");
+            $("#dropdownBtn").removeClass("rotate");
         }
     });
 });
-
