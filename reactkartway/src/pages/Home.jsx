@@ -3,21 +3,71 @@ import React from "react";
 
 
 class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.videoRef = React.createRef();
+        this.state = {
+            isPaused: false
+        };
+    }
+
+    toggleVideo = () => {
+        const video = this.videoRef.current;
+        if (!video) return;
+
+        if (video.paused) {
+            video.play();
+            this.setState({ isPaused: false });
+        } else {
+            video.pause();
+            this.setState({ isPaused: true });
+        }
+    };
+
+
+
     render() {
         return (
             <div>
                 {/* Hero Video Sektion */}
+                {/* Hero Video Sektion */}
                 <section className="hero">
-                    <video autoPlay muted loop playsInline className="hero-video">
+                    <video
+                        ref={this.videoRef}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="hero-video"
+                    >
                         <source src="src/assets/gkfootage.mp4" type="video/mp4" />
                         Din webbläsare stöder inte videouppspelning.
                     </video>
+
+                    {/* Play / Pause knapp */}
+                    <button
+                        onClick={this.toggleVideo}
+                        className="video-toggle-button"
+                        style={{
+                            position: "absolute",
+                            bottom: "20px",
+                            left: "20px",
+                            zIndex: 10,
+                            scale: 2,
+                            backgroundColor: "rgba(0,0,0,0)",
+                            border: "none",
+
+                            cursor: "pointer"
+                        }}
+                    >
+                        {this.state.isPaused ? "▶️" : "⏸️"}
+                    </button>
                     <div className="hero-overlay"></div>
                     <div className="hero-content">
                         <h2>Välkommen till</h2>
                         <h1>Kartway</h1>
                         <p>Din lokala gokartbana</p>
-                        <a href="bokning.html" className="hero-button">
+                        <a href="/bokning.jsx" className="hero-button">
                             Boka nu
                         </a>
                     </div>

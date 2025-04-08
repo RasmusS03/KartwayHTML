@@ -229,7 +229,7 @@ nav ul li a {
 }
 .hero-button:hover {
     background: rgba(255, 255, 255, 0.3); /* Lite ljusare vid hover */
-    transform: scale(1.05%);
+    transform: scale(1.05);
 }
 
 /* Lägg till en pil i knappen */
@@ -243,8 +243,6 @@ body {
     margin: 0 !important;
     padding: 0 !important;
 }
-
-
 
 .drop-in-header{
     margin-top: -30px;
